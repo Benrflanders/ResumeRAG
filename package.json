@@ -1,0 +1,34 @@
+{
+  "name": "resume-rag-ts",
+  "version": "1.0.0",
+  "description": "An interactive UI component for interacting with a RAG about your resume. ",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": {
+    "your-package": "dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benrflanders/ResumeRAG.git"
+  },
+  "keywords": [
+    "rag",
+    "resume"
+  ],
+  "author": "Ben Flanders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benrflanders/ResumeRAG/issues"
+  },
+  "homepage": "https://github.com/Benrflanders/ResumeRAG#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
