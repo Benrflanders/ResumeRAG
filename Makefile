@@ -9,7 +9,7 @@ clean:
 	rm -rf dist
 
 ## Run tests
-test:
+test: build
 	npm run test
 
 ## Link the package locally for testing CLI

@@ -1,6 +1,17 @@
-import { execa } from 'execa';
+import { spawnSync } from 'child_process';
+import path from 'path';
 
-test('CLI displays help', async () => {
-  const { stdout } = await execa('node', ['dist/bin/cli.js', '--help']);
-  expect(stdout).toContain('Usage');
+const cliPath = path.resolve(__dirname, '../../dist/bin/cli.js');
+
+describe('CLI', () => {
+  it('prints help with --help', () => {
+    const result = spawnSync('node', [cliPath, '--help'], { encoding: 'utf-8' });
+    expect(result.stdout).toMatch(/Usage|Help/i);
+  });
+
+  it('errors when no args are passed', () => {
+    const result = spawnSync('node', [cliPath], { encoding: 'utf-8' });
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toMatch(/missing|error/i);
+  });
 });

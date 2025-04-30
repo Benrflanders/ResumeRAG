@@ -1,10 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { ChatComponent } from '../src/ChatComponent';
-
-jest.mock('axios', () => ({
-    post: jest.fn(() => Promise.resolve({ data: 'mocked response' }))
-  }));
+import ChatComponent from '../ChatComponent';
 
 test('renders a button', () => {
   render(<ChatComponent />);
